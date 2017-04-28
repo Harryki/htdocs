@@ -1,0 +1,46 @@
+
+
+
+@media only screen and (min-width: 1600px){
+
+
+}
+@media only screen and (max-width: 1599px) and (min-width: 1439px){
+
+
+}
+@media only screen and (max-width: 1439px) and (min-width: 1024px){
+
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px){
+
+}
+@media only screen and (max-width: 767px) and (min-width: 425px){
+
+}
+@media only screen and (max-width: 424px){
+
+}
+
+
+.intro{
+  font-size: 1.5em;
+}
+.social{
+  margin-top: 10px;
+}
+.skills{
+  font-size: 1.5em;
+}
+.container{
+  margin-top: 6%;
+}
+
+.profile_card{
+  font-family: 'Merriweather', serif;
+
+}
+body{
+  font-family: 'Inconsolata', monospace;
+}
