@@ -44,3 +44,6 @@
 body{
   font-family: 'Inconsolata', monospace;
 }
+html {
+    overflow-y: scroll;
+}
