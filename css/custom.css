@@ -2,12 +2,16 @@
 
 
 @media only screen and (min-width: 1600px){
-
+  #election_modal{
+    width: 750px;
+  }
 
 }
 @media only screen and (max-width: 1599px) and (min-width: 1439px){
 
-
+ #election_modal{
+  width: 650px;
+}
 }
 @media only screen and (max-width: 1439px) and (min-width: 1024px){
 
@@ -45,5 +49,18 @@ body{
   font-family: 'Inconsolata', monospace;
 }
 html {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
+
+.candidates{
+  width: 150px;
+}
+.checkout{
+  margin-top: 50px;
+  margin-bottom: 10%;
+
+}
+.contact{
+  margin-bottom: 150px;
+}
+
