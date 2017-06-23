@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Facebook Login JavaScript Example</title>
+	<title>Team Finder</title>
 	<meta charset="UTF-8">
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:image" content="http://harryki.space/img/preview.png"/>
+	<meta property="og:title" content="Yeonghun (Harry) Ki | IT professional" />
+	<meta property="og:description" content="Hey, I'm Yeonghun. Take a glance on my website"/>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather" rel="stylesheet">
+	
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- bootstrapcdn -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
 </head>
 <body>
 	<script>
@@ -19,7 +37,7 @@
       testAPI();
   } else {
       // The person is not logged into your app or we are unable to tell.
-      
+
       document.getElementById('status').innerHTML = 'Please log ' +
       'into this app.';
   }
@@ -77,8 +95,7 @@
   	console.log('Welcome!  Fetching your information.... ');
   	FB.api('/me', function(response) {
   		console.log('Successful login for: ' + response.name);
-  		document.getElementById('status').innerHTML =
-  		'Thanks for logging in, ' + response.name + '!';
+  		document.getElementById('user_name').innerHTML = response.name;
   	});
   }
 </script>
@@ -98,4 +115,16 @@
 <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
 
 <div class="fb-share-button" data-href="http://harryki.space/facebook" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fharryki.space%2Ffacebook&amp;src=sdkpreparse">Share</a></div>
+
+<nav class="navbar navbar-default">
+	<div class="container">
+		<a class="navbar-brand" href="#">Brand</a>
+		<p class="navbar-text navbar-right">Signed in as <a href="#" id="user_name" class="navbar-link"></a></p>
+	</div>
+</nav>
+<div class="container">
+	<h1>Welcome to Team Finder</h1>
+</div>
+
+</div>
 </html>
