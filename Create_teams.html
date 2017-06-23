@@ -37,11 +37,11 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      
+      document.getElementById('hidden_userid').setAttribute("value", response.authResponse.userID);
   } else {
       // The person is not logged into your app or we are unable to tell.
 
-      
+
   }
 }
 
@@ -72,10 +72,6 @@ window.fbAsyncInit = function() {
 
 	});
 };
-
-
-
-
 
 
 
@@ -126,7 +122,17 @@ window.fbAsyncInit = function() {
 
 <div class="container">
 	<h1>Create a new team</h1>
+	<div class="container">
+		<form action="Create_teams.php" method="POST">
+			<div class="form-group">
+				<label for="name">Team Name</label>
+				<input type="text" class="form-control" name="name" id="name">
+				<input id="hidden_userid" type="hidden" name="hidden_userid" value="" />
+			</div>
 
+			<button type="submit" class="btn btn-default">Create</button>
+		</form>
+	</div>
 </div>
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 <script src="js/scripts.js"></script>
