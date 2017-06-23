@@ -93,6 +93,7 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
   	console.log('Welcome!  Fetching your information.... ');
+  	console.log(response);
   	FB.api('/me', function(response) {
   		console.log('Successful login for: ' + response.name);
   		document.getElementById('user_name').innerHTML = response.name;
@@ -105,8 +106,7 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+
 
 
 
@@ -132,7 +132,8 @@
 	<div class="fb-share-button" data-href="http://harryki.space/facebook" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fharryki.space%2Ffacebook&amp;src=sdkpreparse">Share</a></div>
 	<div id="status">
 	</div>
-
+	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+	</fb:login-button>
 </div>
 
 </div>
