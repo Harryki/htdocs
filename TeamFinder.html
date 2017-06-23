@@ -35,14 +35,12 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 
-		function testAPI() {
-			console.log('Welcome!  Fetching your information.... ');
-			FB.api('/me', function(response) {
-				console.log('Successful login for: ' + response.name);
-
-				document.getElementById('nameplace').innerHTML = response.name + '!';
-			});
-		}
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				var accessToken = response.authResponse.accessToken;
+				console.log(accessToken.userId);
+			} 
+		} );
 	</script>
 	<h1>Hello there</h1>
 	<span id="nameplace"></span>
