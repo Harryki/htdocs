@@ -21,8 +21,10 @@
 	// this works
 	$key_value = "?name=" . $team_name;
 
+	//testing
+	echo "soon i'll redirect this page to ". $file_name . $key_value;
 	?>
 	
-	<script type="text/javascript">location.href = '<?php echo $file_name . $key_value ?>';</script>
+	<!-- <script type="text/javascript">location.href = '<?php echo $file_name . $key_value ?>';</script> -->
 </body>	
 </html>
