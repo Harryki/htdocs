@@ -123,13 +123,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html">Team Finder</a>
+			<a class="navbar-brand" href="TeamFinder.html">Team Finder</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				
+
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Teams <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -175,8 +175,14 @@
 		<h1>Welcome to Team Finder</h1>
 
 		<div class="container">contents</div>
-
-		<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+		<script type="text/javascript">
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					console.log(response.authResponse.accessToken);
+				}
+			});
+		</script>
+	
 
 		<div class="fb-share-button" data-href="http://harryki.space/facebook" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fharryki.space%2Ffacebook&amp;src=sdkpreparse">Share</a></div>
 		<div id="status">
