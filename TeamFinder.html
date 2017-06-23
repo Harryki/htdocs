@@ -38,7 +38,7 @@
   } else {
       // The person is not logged into your app or we are unable to tell.
 
-      document.getElementById('status').innerHTML = 'Please log ' +
+      document.getElementById('when_logout').innerHTML = 'Please log ' +
       'into this app.';
   }
 }
@@ -109,25 +109,30 @@
 </fb:login-button>
 
 
-<div id="status">
-</div>
 
 
 
 <nav class="navbar navbar-default">
 	<div class="container">
-		<a class="navbar-brand" href="#">Brand</a>
+		<a class="navbar-brand" href="#">Team Finder</a>
 
 
 		
-		<p class="navbar-text navbar-right">Signed in as <a href="#" id="user_name" class="navbar-link"></a><div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div></p>
+		<p id="when_logout" class="navbar-text navbar-right">Signed in as <a href="#" id="user_name" class="navbar-link"></a><div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div></p>
 		
 
 	</div>
 </nav>
 <div class="container">
 	<h1>Welcome to Team Finder</h1>
+
+	<div class="container">contents</div>
+
+
 	<div class="fb-share-button" data-href="http://harryki.space/facebook" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fharryki.space%2Ffacebook&amp;src=sdkpreparse">Share</a></div>
+	<div id="status">
+	</div>
+
 </div>
 
 </div>
