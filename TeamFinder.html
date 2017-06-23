@@ -35,6 +35,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+      console.log(response.authResponse.accessToken);
   } else {
       // The person is not logged into your app or we are unable to tell.
 
@@ -99,6 +100,8 @@
   		document.getElementById('user_name').innerHTML = response.name;
 
   	});
+
+  	
   }
 </script>
 
@@ -175,14 +178,8 @@
 		<h1>Welcome to Team Finder</h1>
 
 		<div class="container">contents</div>
-		<script type="text/javascript">
-			FB.getLoginStatus(function(response) {
-				if (response.status === 'connected') {
-					console.log(response.authResponse.accessToken);
-				}
-			});
-		</script>
-	
+		
+
 
 		<div class="fb-share-button" data-href="http://harryki.space/facebook" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fharryki.space%2Ffacebook&amp;src=sdkpreparse">Share</a></div>
 		<div id="status">
