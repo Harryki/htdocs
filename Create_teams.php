@@ -1,30 +1,42 @@
 <html>
 <body>
-
-	<?php 
+	<?php
 	$team_name = $_POST["name"];
-	$file_name = $team_name . ".php"; 
-
-	echo $file_name;
-
-	// echo $_POST["hidden_userid"];
+	$filename = $team_name . ".php"; 
+	$somecontent = file_get_contents("template.php");
 	
-	$newcontent = file_get_contents("template.php");
 
+// Let's make sure the file exists and is writable first.
+	$handle = fopen($filename,'w+'); 
+	if (is_writable($filename)) {
 
-	if (!file_exists($file_name)) {
-		$handle = fopen($file_name,'w+'); 
-		fwrite($handle,$newcontent); 
-		fclose($handle); 
+    // In our example we're opening $filename in append mode.
+    // The file pointer is at the bottom of the file hence
+    // that's where $somecontent will go when we fwrite() it.
+		if (!$handle = fopen($filename, 'a')) {
+			echo "Cannot open file ($filename)";
+			exit;
+		}
+
+    // Write $somecontent to our opened file.
+		if (fwrite($handle, $somecontent) === FALSE) {
+			echo "Cannot write to file ($filename)";
+			exit;
+		}
+
+		echo "Success, wrote to file ($filename)";
+
+		fclose($handle);
+
+	} else {
+		echo "The file $filename is not writable";
 	}
 
 	// this works
 	$key_value = "?name=" . $team_name;
 
-	//testing
-	echo "soon i'll redirect this page to ". $file_name . $key_value;
 	?>
 	
-	<!-- <script type="text/javascript">location.href = '<?php echo $file_name . $key_value ?>';</script> -->
+	<script type="text/javascript">location.href = '<?php echo $file_name . $key_value ?>';</script>
 </body>	
 </html>
