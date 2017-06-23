@@ -34,9 +34,10 @@
 
 	// this works
 	$key_value = "?name=" . $team_name;
-
+	
+	echo $_POST["hidden_userid"];
 	?>
 	
-	<script type="text/javascript">location.href = '<?php echo $file_name . $key_value ?>';</script>
+	<!-- <script type="text/javascript">location.href = '<?php echo $file_name . $key_value ?>';</script> -->
 </body>	
 </html>
