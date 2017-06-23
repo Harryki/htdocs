@@ -27,62 +27,106 @@
 <body>
 	<div id="fb-root"></div>
 	<script>
-				(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=113016535975514";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="TeamFinder.html">Team Finder</a>
-			</div>
+		function statusChangeCallback(response) {
+			console.log('statusChangeCallback');
+			console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      
+  } else {
+      // The person is not logged into your app or we are unable to tell.
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
+     
+  }
+}
 
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Teams <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="Team_Dashboard.html">Dashboard</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="Create_teams.html">Create a Team</a></li>
-							<li><a href="#">Edit Team</a></li>
+function checkLoginState() {
+	FB.getLoginStatus(function(response) {
+		statusChangeCallback(response);
+	});
+}
 
-						</ul>
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=113016535975514";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
-					</li>
-					<li><a href="#">Join</a></li>
-				</ul>
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : '113016535975514',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.8' // use graph api version 2.8
+});
+	FB.getLoginStatus(function(response) {
+		statusChangeCallback(response);
 
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" id="user_name" class="navbar-link"></a></li>
-					<li>
-						<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
-					</li>
-
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-	</nav>
+	});
 
 
-	<div class="container">
-		<h1>Create a new team</h1>
 
-	</div>
-	<script src="js/scripts.js"></script>
+
+
+
+</script>
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="TeamFinder.html">Team Finder</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Teams <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="Team_Dashboard.html">Dashboard</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="Create_teams.html">Create a Team</a></li>
+						<li><a href="#">Edit Team</a></li>
+
+					</ul>
+
+				</li>
+				<li><a href="#">Join</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#" id="user_name" class="navbar-link"></a></li>
+				<li>
+					<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+				</li>
+
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container">
+	<h1>Create a new team</h1>
+
+</div>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+<script src="js/scripts.js"></script>
 </body>
 </html>
