@@ -35,6 +35,14 @@
 
 <body>
 	
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=113016535975514";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	
 
 
 	<div class="container">
@@ -42,7 +50,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="row">
 					<div class="col-sm-3 col-sm-offset-15 face">
-					<a href="./facebook.html">
+						<a href="./facebook.html">
 							<img src="img/harry.png" alt="..." class=" img-responsive img-circle" width="100">
 						</a>
 					</div>
@@ -164,6 +172,7 @@
 	<footer class="footer navbar-fixed-bottom">
 		<div class="container">
 			<p class="text-muted" style="text-align: right">&copy; Yeonghun(harry) Ki <span id="year"></span>. <a href="https://github.com/Harryki/html"><i class="fa fa-github" aria-hidden="true"></i></a></p>
+			<div class="fb-like" data-href="http://harryki.space/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 		</div>
 	</footer>
 
