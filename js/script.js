@@ -1,7 +1,7 @@
 // Shorthand for $( document ).ready()
 $(function() {
 	console.log( "ready!" );
-	
+
 	var currentYear = (new Date).getFullYear();
 	$('#year').text(currentYear);
 });
@@ -17,7 +17,8 @@ function myFunction2(){
 	$('#skills_icon').toggleClass("fa-minus");
 	$('#skills_icon').toggleClass("fa-plus");
 
-}function myFunction3(){
+}
+function myFunction3(){
 	$("#contact_div").slideToggle();
 	$('#contact_icon').toggleClass("fa-minus");
 	$('#contact_icon').toggleClass("fa-plus");
@@ -30,5 +31,5 @@ $(function () {
 
 $('#myAlert').on('closed.bs.alert', function () {
   // do something…
-  console.log("ddd");  
+  console.log("ddd");
 })
