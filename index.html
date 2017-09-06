@@ -27,9 +27,19 @@
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
+	<!-- token field -->
+	<script type="text/javascript" src="js/bootstrap-tokenfield.js" ></script>
+	<link rel="stylesheet" href="css/bootstrap-tokenfield.css">
+
 	<!-- custom css & js-->
 	<link rel="stylesheet" href="css/custom.css">
 	<script type="text/javascript" src="js/script.js" ></script>
+	<!-- instagram api features -->
+	<link rel="stylesheet" href="css/insta.css">
+	<script type="text/javascript" src="js/event.js" ></script>
+
+
+
 
 </head>
 
@@ -42,7 +52,6 @@
 		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=113016535975514";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
-
 
 
 	<div class="container">
@@ -68,7 +77,8 @@
 
 				<code>&lt;Intro&gt;</code>
 				<span onclick="myFunction()">
-					<i class="fa fa-minus" aria-hidden="true" id="intro_icon"></i>
+					<i class="fa fa-chevron-down" aria-hidden="true" id="intro_icon"></i>
+					<i class="fa fa-ellipsis-h" style="display: none;" id="intro_ellipsis"></i>
 				</span>
 				<div class="col-sm-11 col-sm-offset-1" id="intro_div">
 					<p class="intro">Computer Information Technology graduate.
@@ -76,6 +86,7 @@
 					<p class="intro">Experienced worker providing cutting-edge customer service from IT department in BCIT. Strong operations professional with a Computer Information Technology (CIT) Diploma focused in Information Technology from British Columbia Institute of Technology.</p>
 					<!-- <p class="intro"><a href="#">more about me</a></p> -->
 				</div>
+
 				<p> <code>&lt;/Intro&gt;</code> </p>
 
 
@@ -87,104 +98,111 @@
 			<div class="col-md-8 col-md-offset-2">
 				<code>&lt;skills&gt;</code>
 				<span onclick="myFunction2()">
-					<i class="fa fa-minus" aria-hidden="true" id="skills_icon"></i>
+					<i class="fa fa-chevron-down" aria-hidden="true" id="skills_icon"></i>
+					<i class="fa fa-ellipsis-h" style="display: none;" id="skills_ellipsis"></i>
 				</span>
 				<div class="col-sm-11 col-sm-offset-1" id="skills_div">
-					<ul class="list-inline skills">
-						<li>AWS</li>
-						<li>Google Cloud</li>
-					</ul>
-					<ul class="list-inline skills">
-						<li>HTML</li>
-						<li>PHP</li>
-						<li>CSS</li>
-						<li>JavaScript</li>
-					</ul>
-					<ul class="list-inline skills">
-						<li>Java</li>
-					</ul>
-					<ul class="list-inline skills">
-						<li>Technical Support</li>
-						<li>Troubleshooting</li>
-					</ul>
-					<ul class="list-inline skills">
-						<li>Windows</li>
-						<li>Linux</li>
-					</ul>
+					<input type="text" class="form-control" id="tokenfield" value="AWS,Google Cloud,HTML,PHP,CSS,JavaScript,Java,C#,Python,Technical Support, Troubleshooting, Windows, Linux" />
+
+
 				</div>
 				<p> <code>&lt;/skills&gt;</code> </p>
 			</div>
 		</div>
-		<div class="row contact">
-			<div class="col-md-8 col-md-offset-2 social">
-				<code>&lt;Contact&gt;</code>
-				<span onclick="myFunction3()">
-					<i class="fa fa-minus" aria-hidden="true" id="contact_icon"></i>
-				</span>
-				<div class="col-sm-11 col-sm-offset-1" id="contact_div">
-					<ul class="list-inline skills">
-						<li><a href="mailto:Yeonghun.ki@gmail.com?Subject=Hello, i've seen your website" data-toggle="tooltip" data-placement="bottom" title="Say Hi!"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
-						<li><a href="https://www.linkedin.com/in/yeonghun-harry-ki-b50740105/" data-toggle="tooltip" data-placement="bottom" title="Go to my LinkedIn profile"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
-						<li><span data-toggle="modal" data-target="#myModal"><a href="#" onClick="return false;" data-toggle="tooltip" data-placement="bottom" title="Get my resume" ><i class="fa fa-file-text" aria-hidden="true"></i> Resume</a></span></li>
-						<li><a href="#" onClick="return false;" data-toggle="tooltip" data-placement="bottom" title="+1 778 927 6529"><i class="fa fa-mobile" aria-hidden="true" style="font-weight: bold"></i> Phone</a></li>
 
-					</ul>
+		<div class="row Insta">
+			<div class="col-md-8 col-md-offset-2 social">
+				<code>&lt;Instagram API&gt;</code>
+				<span onclick="myFunction4()">
+					<i class="fa fa-chevron-down" aria-hidden="true" id="insta_icon"></i>
+					<i class="fa fa-ellipsis-h" style="display: none;" id="insta_ellipsis"></i>
+				</span>
+
+				<div class="col-sm-11 col-sm-offset-1" id="insta_div">
+					<div class="profile_header"><a href="https://www.instagram.com/harryki007/"><img style="width:40px; height:40px; border-radius: 50%;" src="https://scontent-sea1-1.cdninstagram.com/t51.2885-19/s150x150/16788735_1379502792111885_6410235111572242432_a.jpg"></a>
+						<h3 style="display:inline;">harryki007</h3></div>
+						<div id="instaPics"></div>
+					</div>
+
+					<p> <code>&lt;/Instagram API&gt;</code> </p>
 				</div>
-				<p> <code>&lt;/Contact&gt;</code> </p>
 			</div>
 
-		</div>
-		<!-- <div class="row">
+			<div class="row contact">
+				<div class="col-md-8 col-md-offset-2 social">
+					<code>&lt;Contact&gt;</code>
+					<span onclick="myFunction3()">
+						<i class="fa fa-chevron-down" aria-hidden="true" id="contact_icon"></i>
+						<i class="fa fa-ellipsis-h" style="display: none;" id="contact_ellipsis"></i>
+					</span>
+					<div class="col-sm-11 col-sm-offset-1" id="contact_div">
+						<ul class="list-inline skills">
+							<li><a href="mailto:Yeonghun.ki@gmail.com?Subject=Hello, i've seen your website" data-toggle="tooltip" data-placement="bottom" title="Say Hi!"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
+							<li><a href="https://www.linkedin.com/in/yeonghun-harry-ki-b50740105/" data-toggle="tooltip" data-placement="bottom" title="Go to my LinkedIn profile"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+							<li><span data-toggle="modal" data-target="#myModal"><a href="#" onClick="return false;" data-toggle="tooltip" data-placement="bottom" title="Get my resume" ><i class="fa fa-file-text" aria-hidden="true"></i> Resume</a></span></li>
+							<li><a href="#" onClick="return false;" data-toggle="tooltip" data-placement="bottom" title="+1 778 927 6529"><i class="fa fa-mobile" aria-hidden="true" style="font-weight: bold"></i> Phone</a></li>
+
+						</ul>
+					</div>
+					<p> <code>&lt;/Contact&gt;</code> </p>
+				</div>
+
+			</div>
+
+
+			<!-- <div class="row">
 			<div class="col-md-8 col-md-offset-2 social">
 			input
-			</div>
-		</div> -->
+		</div>
+	</div> -->
 
-		<!-- Button trigger modal -->
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 social">
+	<!-- Button trigger modal -->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 social">
 
 
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Download the resume</h4>
-							</div>
-							<div class="modal-body">
-								<p>Download my resume pdf file</p>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Download the resume</h4>
+						</div>
+						<div class="modal-body">
+							<p>Download my resume pdf file</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-								<a class="btn btn-primary" href="resume/Yeonghun Ki resume.pdf" data-toggle="tooltip" data-placement="bottom" title="Get my resume"><i class="fa fa-file-text" aria-hidden="true"></i> Resume</a>
+							<a class="btn btn-primary" href="resume/Yeonghun Ki resume.pdf" data-toggle="tooltip" data-placement="bottom" title="Get my resume"><i class="fa fa-file-text" aria-hidden="true"></i> Resume</a>
 
-							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
+
 		</div>
+	</div>
+
+</div>
+<footer class="footer navbar-fixed-bottom" id="footer">
+	<div class="container" id="footer_container">
+		<p class="text-muted" style="text-align: right">&copy; Yeonghun(harry) Ki <span id="year"></span>. <a href="https://github.com/Harryki/htdocs"><i class="fa fa-github" aria-hidden="true"></i></a><div class="fb-like" data-href="http://harryki.space/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></p>
 
 	</div>
-	<footer class="footer navbar-fixed-bottom">
-		<div class="container">
-			<p class="text-muted" style="text-align: right">&copy; Yeonghun(harry) Ki <span id="year"></span>. <a href="https://github.com/Harryki/htdocs"><i class="fa fa-github" aria-hidden="true"></i></a><div class="fb-like" data-href="http://harryki.space/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></p>
 
-		</div>
-	</footer>
 
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+</footer>
 
-		ga('create', 'UA-96196087-1', 'auto');
-		ga('send', 'pageview');
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	</script>
+ga('create', 'UA-96196087-1', 'auto');
+ga('send', 'pageview');
+
+</script>
 </body>
 </html>

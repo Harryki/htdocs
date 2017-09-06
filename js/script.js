@@ -4,24 +4,40 @@ $(function() {
 
 	var currentYear = (new Date).getFullYear();
 	$('#year').text(currentYear);
+
+
+	$('#tokenfield').tokenfield({
+		showAutocompleteOnFocus: true
+	})
 });
 
 function myFunction(){
 	$("#intro_div").slideToggle();
-	$('#intro_icon').toggleClass("fa-minus");
-	$('#intro_icon').toggleClass("fa-plus");
+
+	$("#intro_ellipsis").toggle(300);
+	$('#intro_icon').toggleClass("fa-chevron-down");
+	$('#intro_icon').toggleClass("fa-chevron-right");
 
 }
 function myFunction2(){
 	$("#skills_div").slideToggle();
-	$('#skills_icon').toggleClass("fa-minus");
-	$('#skills_icon').toggleClass("fa-plus");
+	$("#skills_ellipsis").toggle(300);
+	$('#skills_icon').toggleClass("fa-chevron-down");
+	$('#skills_icon').toggleClass("fa-chevron-right");
 
 }
 function myFunction3(){
 	$("#contact_div").slideToggle();
-	$('#contact_icon').toggleClass("fa-minus");
-	$('#contact_icon').toggleClass("fa-plus");
+	$("#contact_ellipsis").toggle(300);
+	$('#contact_icon').toggleClass("fa-chevron-down");
+	$('#contact_icon').toggleClass("fa-chevron-right");
+
+}
+function myFunction4(){
+	$("#insta_div").slideToggle();
+	$("#insta_ellipsis").toggle(300);
+	$('#insta_icon').toggleClass("fa-chevron-down");
+	$('#insta_icon').toggleClass("fa-chevron-right");
 
 }
 
@@ -30,6 +46,6 @@ $(function () {
 })
 
 $('#myAlert').on('closed.bs.alert', function () {
-  // do something…
-  console.log("ddd");
+	// do something…
+	console.log("ddd");
 })

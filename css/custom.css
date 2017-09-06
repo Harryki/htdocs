@@ -61,6 +61,12 @@ html {
 
 }
 .contact{
-  margin-bottom: 150px;
+  margin-bottom: 130px;
 }
-
+.profile_header{
+  padding: 10px 40px ;
+}
+#footer_container{
+  margin-top: 0;
+  width: 60%;
+}
