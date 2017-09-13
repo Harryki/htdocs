@@ -13,7 +13,7 @@ $( document ).ready(function() {
         // console.log(response.data[0]);
          var insta = '<div id="myCarousel" class="carousel slide" data-ride="carousel" >';
         if ( response.data.length > 0 ) {
-          //console.log(response.data[0])
+          console.log(response.data[0])
           insta += '<ol class="carousel-indicators">';
           insta +="<li data-target=''#myCarousel' data-slide-to='0' class='active' ></li>"
           for(var i = 1; i < response.data.length; i++) {
@@ -22,7 +22,14 @@ $( document ).ready(function() {
           }
 
           insta += "</ol><div class='carousel-inner'>";
-          insta +='<div class="item active"><a href="'+response.data[0].link+'"><img src="' +response.data[0].images.standard_resolution.url+'" alt="image"><div class="carousel-caption"><p>'+response.data[0].caption.text+'</p></div></div>';
+          var first_text = response.data[0];
+          if(first_text.caption){
+            insta +='<div class="item active"><a href="'+response.data[0].link+'"><img src="' +response.data[0].images.standard_resolution.url+'" alt="image"><div class="carousel-caption"><p>'+response.data[0].caption.text+'</p></div></div>';
+
+          }else{
+            insta +='<div class="item active"><a href="'+response.data[0].link+'"><img src="' +response.data[0].images.standard_resolution.url+'" alt="image"><div class="carousel-caption"><p></p></div></div>';
+            console.log("caption is null");
+          }
 
           for(var j = 1; j < response.data.length; j++) {
             var text = response.data[j];
@@ -51,7 +58,12 @@ $( document ).ready(function() {
         }, function(){
           $(this).find(".caption-layer").css({"display":"none"});
         });
+      },
+      error: function(xhr, ajaxOptions, thrownError){
+        alert(xhr.status);
+        alert(thrownError);
       }
+
     });
   });
 });
